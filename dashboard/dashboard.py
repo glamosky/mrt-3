@@ -53,7 +53,7 @@ st.markdown("""
 def load_data():
     """Load and preprocess the MRT-3 ridership data"""
     # Load the data
-    df = pd.read_csv('mrt-3/data/cleaned_ridership_data.csv')
+    df = pd.read_csv('data/cleaned_ridership_data.csv')
     
     # Convert to long format
     df_melted = df.melt(id_vars=['Date', 'Year'], 

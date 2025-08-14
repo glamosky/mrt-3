@@ -1,0 +1,4 @@
+# Requirements for MRT-3 Dashboard
+# This file references the requirements in dashboard/requirements.txt
+
+-r dashboard/requirements.txt

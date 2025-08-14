@@ -52,9 +52,14 @@ A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ride
    pip install -r requirements.txt
    ```
 
-3. **Navigate to dashboard directory and run**
+3. **Run the dashboard**
    ```bash
+   # Option 1: Run from dashboard directory (local development)
    cd mrt-3/dashboard
+   streamlit run dashboard.py
+   
+   # Option 2: Run from mrt-3 root (deployment testing)
+   cd mrt-3
    streamlit run dashboard.py
    ```
 
@@ -65,22 +70,26 @@ A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ride
 
 **Note**: The dashboard expects the data file to be located at `../data/cleaned_ridership_data.csv` relative to the dashboard directory. This path structure is already configured in the application.
 
+**Deployment**: For deployment platforms, use the `dashboard.py` file in the mrt-3 root directory, which automatically imports this dashboard.
+
 ## Project Structure
 
 ```
-mrt/
-├── mrt-3/
-│   ├── data/
-│   │   ├── cleaned_ridership_data.csv    # Main dataset
-│   │   ├── DAILY RIDERSHIP FROM 1999 (58).xlsx
-│   │   └── ridership (2).xlsx
-│   ├── mrt-3.ipynb          # Original analysis notebook
-│   ├── wide format.ipynb     # Data processing notebook
-│   └── dashboard/            # Dashboard application folder
-│       ├── dashboard.py      # Main Streamlit dashboard application
-│       ├── requirements.txt  # Python dependencies
-│       ├── environment.yml   # Conda environment file
-│       └── README.md         # This file
+mrt-3/
+├── dashboard.py              # Deployment entry point (wrapper)
+├── requirements.txt          # Deployment dependencies
+├── README.md                # Deployment documentation
+├── data/
+│   ├── cleaned_ridership_data.csv    # Main dataset
+│   ├── DAILY RIDERSHIP FROM 1999 (58).xlsx
+│   └── ridership (2).xlsx
+├── mrt-3.ipynb              # Original analysis notebook
+├── wide format.ipynb         # Data processing notebook
+└── dashboard/                # Dashboard application folder
+    ├── dashboard.py          # Main Streamlit dashboard application
+    ├── requirements.txt      # Python dependencies
+    ├── environment.yml       # Conda environment file
+    └── README.md             # This file (detailed documentation)
 ```
 
 ## Dashboard Controls

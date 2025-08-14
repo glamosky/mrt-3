@@ -54,6 +54,7 @@ def load_data():
     """Load and preprocess the MRT-3 ridership data"""
     # Load the data
     df = pd.read_csv('/data/cleaned_ridership_data.csv')
+    # df = pd.read_csv('.../data/cleaned_ridership_data.csv') local deployment
     
     # Convert to long format
     df_melted = df.melt(id_vars=['Date', 'Year'], 

@@ -1,6 +1,6 @@
-# MRT-3 Ridership Dashboard
+# MRT-3 Ridership Dashboard and EDA Notebook
 
-A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ridership data from 1999 to March 2025. This dashboard provides interactive visualizations and insights similar to the DOTR Railway Sector Datasets website.
+A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ridership data from 1999 to March 2025. This dashboard provides interactive visualizations and insights similar to the DOTR Railway Sector Datasets website. 
 
 ## Features
 

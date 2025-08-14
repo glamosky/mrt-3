@@ -1,8 +1,8 @@
-# 🚇 MRT-3 Ridership Dashboard
+# MRT-3 Ridership Dashboard
 
-A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ridership data from 1999 to 2025. This dashboard provides interactive visualizations and insights similar to the DOTR Railway Sector Datasets website.
+A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ridership data from 1999 to March 2025. This dashboard provides interactive visualizations and insights similar to the DOTR Railway Sector Datasets website.
 
-## 📊 Features
+## Features
 
 ### Overview Dashboard
 - **Key Metrics**: Total ridership, average daily ridership, peak daily ridership, and data coverage
@@ -32,7 +32,7 @@ A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ride
 - **Growth Rate Analysis**: Projected growth rates
 - **Seasonal Forecasting**: Monthly pattern-based forecasting
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -52,8 +52,9 @@ A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ride
    pip install -r requirements.txt
    ```
 
-3. **Run the dashboard**
+3. **Navigate to dashboard directory and run**
    ```bash
+   cd mrt-3/dashboard
    streamlit run dashboard.py
    ```
 
@@ -62,23 +63,27 @@ A comprehensive Streamlit dashboard for analyzing Metro Rail Transit Line 3 ride
    - Navigate to `http://localhost:8501`
    - The dashboard will load automatically
 
-## 📁 Project Structure
+**Note**: The dashboard expects the data file to be located at `../data/cleaned_ridership_data.csv` relative to the dashboard directory. This path structure is already configured in the application.
+
+## Project Structure
 
 ```
 mrt/
-├── dashboard.py              # Main Streamlit dashboard application
-├── requirements.txt          # Python dependencies
-├── README.md                # This file
-└── mrt-3/
-    ├── data/
-    │   ├── cleaned_ridership_data.csv    # Main dataset
-    │   ├── DAILY RIDERSHIP FROM 1999 (58).xlsx
-    │   └── ridership (2).xlsx
-    ├── mrt-3.ipynb          # Original analysis notebook
-    └── wide format.ipynb     # Data processing notebook
+├── mrt-3/
+│   ├── data/
+│   │   ├── cleaned_ridership_data.csv    # Main dataset
+│   │   ├── DAILY RIDERSHIP FROM 1999 (58).xlsx
+│   │   └── ridership (2).xlsx
+│   ├── mrt-3.ipynb          # Original analysis notebook
+│   ├── wide format.ipynb     # Data processing notebook
+│   └── dashboard/            # Dashboard application folder
+│       ├── dashboard.py      # Main Streamlit dashboard application
+│       ├── requirements.txt  # Python dependencies
+│       ├── environment.yml   # Conda environment file
+│       └── README.md         # This file
 ```
 
-## 🎛️ Dashboard Controls
+## Dashboard Controls
 
 ### Sidebar Options
 - **Year Range Slider**: Filter data by specific year ranges
@@ -95,20 +100,20 @@ mrt/
 - **Responsive Layout**: Dashboard adapts to different screen sizes
 - **Real-time Filtering**: Data updates automatically when filters change
 
-## 📈 Data Insights
+## Data Insights
 
 ### Key Findings from the Analysis
 - **Historical Growth**: MRT-3 has experienced significant growth since its inception
 - **Seasonal Patterns**: Clear monthly and seasonal variations in ridership
-- **Impact Events**: Notable drops during major events (e.g., COVID-19 pandemic)
+- **Impact Events**: Notable drops during major events (e.g., COVID-19 pandemic, Tirik Abaya Scandal)
 - **Recovery Trends**: Post-event recovery patterns and growth trajectories
 
 ### Data Quality
-- **Coverage**: Comprehensive data from 1999 to 2025
+- **Coverage**: Comprehensive data from 1999 to March 2025
 - **Completeness**: High data completeness with minimal missing values
-- **Accuracy**: Validated ridership numbers from official sources
+- **Accuracy**: Validated ridership numbers from official sources (Freedom of Information request)
 
-## 🛠️ Technical Details
+## Technical Details
 
 ### Technologies Used
 - **Streamlit**: Web application framework
@@ -122,7 +127,7 @@ mrt/
 - **Responsive Design**: Optimized for various screen sizes
 - **Efficient Processing**: Optimized data processing for large datasets
 
-## 🔧 Customization
+## Customization
 
 ### Adding New Visualizations
 1. Create new functions in `dashboard.py`
@@ -139,19 +144,20 @@ mrt/
 - Update color schemes and layout parameters
 - Customize chart themes in Plotly configurations
 
-## 📞 Support
+## Support
 
 For questions or issues:
 1. Check the data format matches the expected structure
 2. Ensure all dependencies are properly installed
 3. Verify Python version compatibility
 4. Check console output for error messages
+5. Directly DM me
 
-## 📄 License
+## License
 
 This project is for educational and analytical purposes. Please ensure proper attribution when using the analysis or visualizations.
 
-## 🔄 Updates
+## Updates
 
 ### Version 1.0
 - Initial dashboard release

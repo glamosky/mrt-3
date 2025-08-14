@@ -53,7 +53,7 @@ st.markdown("""
 def load_data():
     """Load and preprocess the MRT-3 ridership data"""
     # Load the data
-    df = pd.read_csv('data/cleaned_ridership_data.csv')
+    df = pd.read_csv('../data/cleaned_ridership_data.csv')
     
     # Convert to long format
     df_melted = df.melt(id_vars=['Date', 'Year'], 
@@ -224,8 +224,16 @@ def show_overview(filtered_df, full_df):
         st.markdown("**📈 Growth Trends:**")
         best_growth = yearly_data.loc[yearly_data['YoY_Growth'].idxmax()]
         worst_growth = yearly_data.loc[yearly_data['YoY_Growth'].idxmin()]
-        st.markdown(f"- Best growth: {best_growth['Year']} ({best_growth['YoY_Growth']:.0f}%)")
-        st.markdown(f"- Worst decline: {worst_growth['Year']} ({worst_growth['YoY_Growth']:.0f}% INCOMPLETE DATA)")
+        # Check if 2025 is the best growth year and add disclaimer
+        if best_growth['Year'] == 2025:
+            st.markdown(f"- Best growth: {best_growth['Year']} ({best_growth['YoY_Growth']:.0f}%) - **Incomplete Data**")
+        else:
+            st.markdown(f"- Best growth: {best_growth['Year']} ({best_growth['YoY_Growth']:.0f}%)")
+        # Check if 2025 is the worst decline year and add disclaimer
+        if worst_growth['Year'] == 2025:
+            st.markdown(f"- Worst decline: {worst_growth['Year']} ({worst_growth['YoY_Growth']:.0f}%) - **Incomplete Data**")
+        else:
+            st.markdown(f"- Worst decline: {worst_growth['Year']} ({worst_growth['YoY_Growth']:.0f}%)")
         st.markdown("</div>", unsafe_allow_html=True)
 
 def show_trend_analysis(filtered_df):
